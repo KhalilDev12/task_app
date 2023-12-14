@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_app/pages/homePage.dart';
 import 'package:task_app/pages/splashScreen.dart';
 import 'package:task_app/pages/tasksPage.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Task Application',
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       //home: SplashScreen(onInitializationComplete: () {}),
-      home: TasksPage(),
+      home: HomePage(),
     );
   }
 }

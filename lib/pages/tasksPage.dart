@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_app/models/taskModel.dart';
 import 'package:task_app/services/apiService.dart';
+import 'package:task_app/widgets/tasksListTile.dart';
 
 class TasksPage extends StatefulWidget {
   TasksPage({Key? key}) : super(key: key);
@@ -42,7 +43,8 @@ class _TasksPageState extends State<TasksPage> {
             return ListView.builder(
               itemCount: tasks.length,
               itemBuilder: (context, index) {
-                return ListTile(
+                return TasksListTile(task: tasks[index]);
+                /*return ListTile(
                   title: Text(tasks[index].title),
                   trailing: Checkbox(
                     value: tasks[index].completed,
@@ -50,7 +52,7 @@ class _TasksPageState extends State<TasksPage> {
                       // Implement task completion logic
                     },
                   ),
-                );
+                );*/
               },
             );
           }
