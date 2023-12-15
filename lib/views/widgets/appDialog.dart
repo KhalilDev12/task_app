@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/taskProvider.dart';
+import '../../providers/taskProvider.dart';
 import '../../models/taskModel.dart';
 import 'appTextField.dart';
 

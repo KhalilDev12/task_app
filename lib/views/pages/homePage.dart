@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:task_app/config/routes.dart';
 import 'package:task_app/views/pages/tasksListPage.dart';
 
 import 'addTaskPage.dart';
@@ -26,7 +27,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Center(
         child: Column(
@@ -34,20 +34,12 @@ class _HomePageState extends State<HomePage> {
           children: [
             OutlinedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => TasksListPage(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, AppRoutes.tasksList);
                 },
                 child: const Text("Tasks List")),
             OutlinedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => AddTaskPage(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, AppRoutes.addTask);
                 },
                 child: const Text("Add A Task")),
           ],

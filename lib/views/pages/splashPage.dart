@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/taskProvider.dart';
+import '../../providers/taskProvider.dart';
 
 
 class SplashPage extends StatefulWidget {
@@ -40,7 +42,7 @@ class _SplashPageState extends State<SplashPage> {
   Future<void> _setup(BuildContext context) async {
     final taskProvider = Provider.of<TaskProvider>(context, listen: false);
     await taskProvider.getTasks();
-    print("Fetching Complete");
+    log("Fetching Complete");
   }
 
   @override
@@ -50,6 +52,7 @@ class _SplashPageState extends State<SplashPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
           child: Container(
             height: deviceHeight * 0.2,

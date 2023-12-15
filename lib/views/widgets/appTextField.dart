@@ -6,19 +6,17 @@ class AppTextField extends StatelessWidget {
   TextInputType? keyboardType = TextInputType.text;
   int? maxLines = 1;
 
-  AppTextField({Key? key,
-    required this.title,
-    required this.controller,
-    this.keyboardType,
-    this.maxLines})
+  AppTextField(
+      {Key? key,
+      required this.title,
+      required this.controller,
+      this.keyboardType,
+      this.maxLines})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double deviceHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
+    double deviceHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

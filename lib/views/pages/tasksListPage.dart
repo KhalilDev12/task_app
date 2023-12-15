@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../controller/taskProvider.dart';
+import '../../providers/taskProvider.dart';
 import '../../services/apiService.dart';
 import '../widgets/tasksListTile.dart';
 
@@ -16,6 +16,9 @@ class TasksListPage extends StatefulWidget {
 class _TasksListPageState extends State<TasksListPage> {
   final ApiService apiService = ApiService();
   late TaskProvider taskProvider;
+  late double deviceHeight, deviceWidth;
+
+  bool isRefreshing = false;
 
   @override
   void initState() {
@@ -30,9 +33,11 @@ class _TasksListPageState extends State<TasksListPage> {
   @override
   Widget build(BuildContext context) {
     taskProvider = Provider.of<TaskProvider>(context);
+    deviceHeight = MediaQuery.of(context).size.height;
+    deviceWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        appBar: AppBar(title: const Text("Tasks List"), centerTitle: true),
+        appBar: _appBar(),
         body: RefreshIndicator(
             onRefresh: _onRefresh,
             child: taskProvider.tasks.isNotEmpty
@@ -43,12 +48,37 @@ class _TasksListPageState extends State<TasksListPage> {
                       return TasksListTile(task: task);
                     },
                   )
-                : const Center(
-                    child: Text('No tasks available.'),
+                : Center(
+                    child: isRefreshing
+                        ? const CircularProgressIndicator()
+                        : Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Text('No tasks available.'),
+                              SizedBox(height: deviceHeight * 0.01),
+                              IconButton(
+                                  onPressed: () {
+                                    _onRefresh();
+                                  },
+                                  icon: Icon(
+                                    color: Colors.green,
+                                    Icons.refresh,
+                                    size: deviceHeight * 0.05,
+                                  ))
+                            ],
+                          ),
                   )));
   }
 
+  AppBar _appBar() => AppBar(backgroundColor:Colors.white,title: const Text("Tasks List"), centerTitle: true);
+
   Future<void> _onRefresh() async {
+    setState(() {
+      isRefreshing = true;
+    });
     await taskProvider.getTasks();
+    setState(() {
+      isRefreshing = false;
+    });
   }
 }

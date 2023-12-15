@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/taskProvider.dart';
+import '../../providers/taskProvider.dart';
 import '../../models/taskModel.dart';
 import '../widgets/appTextField.dart';
 
@@ -37,7 +37,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
     deviceHeight = MediaQuery.of(context).size.height;
     deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(title: const Text("Add New Task"), centerTitle: true),
+      appBar: _appBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.1),
         child: Center(
@@ -70,6 +70,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
       ),
     );
   }
+
+  AppBar _appBar() => AppBar(backgroundColor:Colors.white,title: const Text("Add New Task"), centerTitle: true);
 
   Row _completedCheckBox() {
     return Row(

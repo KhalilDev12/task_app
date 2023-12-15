@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:task_app/config/routes.dart';
+import 'package:task_app/providers/taskProvider.dart';
 import 'package:task_app/services/apiService.dart';
+import 'package:task_app/views/pages/addTaskPage.dart';
 import 'package:task_app/views/pages/homePage.dart';
 import 'package:task_app/views/pages/splashPage.dart';
-
-import 'controller/taskProvider.dart';
+import 'package:task_app/views/pages/tasksListPage.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -35,7 +37,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Task Application',
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: HomePage(),
+      initialRoute: AppRoutes.homePage,
+      routes: {
+        AppRoutes.homePage: (context) => HomePage(),
+        AppRoutes.tasksList: (context) => TasksListPage(),
+        AppRoutes.addTask: (context) => AddTaskPage()
+      },
     );
   }
 }
