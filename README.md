@@ -9,7 +9,10 @@ These instructions will help you set up and run the Task Manager app on your loc
 ## Features
 
 - Splash screen fetching tasks from the API.
+
   <img src="images/splash_page.jpg" alt="Splash Page" width="200"/>
+
+
 - Tasks Page for Showing all The Tasks with Swipe to Refresh Function
   <img src="images/tasksList_page.jpg" alt="Tasks List Page" width="200"/> <img src="images/swipe_to_refresh.jpg" alt="Swipe to Refresh" width="200"/>
 - Edit Task Details
