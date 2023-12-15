@@ -2,10 +2,6 @@
 
 A Flutter application for managing tasks with REST API integration.
 
-## Getting Started
-
-These instructions will help you set up and run the Task Manager app on your local machine.
-
 ## Features
 
 - Splash screen fetching tasks from the API.
