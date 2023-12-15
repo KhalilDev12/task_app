@@ -52,7 +52,7 @@ class AppDialog {
         builder: (context, setState) {
           controller.text = task.title;
           return AlertDialog(
-            icon: const Icon(Icons.change_circle, color: Colors.green),
+            icon: const Icon(Icons.edit, color: Colors.green),
             content: Form(
               key: formKey,
               child: Column(

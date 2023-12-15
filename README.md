@@ -15,6 +15,15 @@ These instructions will help you set up and run the Task Manager app on your loc
 
 Clone the Task Manager repository to your local machine:
 
+
+![Add Task Page](images/add_task.jpg)
+![Delete Task](images/delete_task.jpg)
+![Edit Task](images/edit_task.jpg)
+![Splash Page](images/splash_page.jpg)
+![Swipe to Refresh](images/swipe_to_refresh.jpg)
+![Tasks List Page](images/tasksList_page.jpg)
+
+
 ```bash
 git clone https://github.com/KhalilDev12/task_app.git
 cd task_app
