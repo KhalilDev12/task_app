@@ -1,9 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:task_app/config/routes.dart';
-import 'package:task_app/views/pages/tasksListPage.dart';
-
-import 'addTaskPage.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);

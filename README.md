@@ -17,4 +17,4 @@ Clone the Task Manager repository to your local machine:
 
 ```bash
 git clone https://github.com/KhalilDev12/task_app.git
-cd task-manager-app
+cd task_app
