@@ -1,14 +1,15 @@
 class TaskModel {
   final int userId;
   final int id;
-  final String title;
-  final bool completed;
+  String title;
+  bool completed;
 
-  TaskModel(
-      {required this.userId,
-      required this.id,
-      required this.title,
-      required this.completed});
+  TaskModel({
+    required this.userId,
+    required this.id,
+    required this.title,
+    required this.completed,
+  });
 
   factory TaskModel.fromJson(Map<String, dynamic> json) {
     return TaskModel(
