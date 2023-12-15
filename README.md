@@ -14,12 +14,22 @@ These instructions will help you set up and run the Task Manager app on your loc
 
 
 - Tasks Page for Showing all The Tasks with Swipe to Refresh Function
+
   <img src="images/tasksList_page.jpg" alt="Tasks List Page" width="200"/> <img src="images/swipe_to_refresh.jpg" alt="Swipe to Refresh" width="200"/>
+  
+
 - Edit Task Details
+
   <img src="images/edit_task.jpg" alt="Edit Task" width="200"/>
+  
+
 - Delete Task
+
   <img src="images/delete_task.jpg" alt="Delete Task" width="200"/>
+  
+
 - Task form screen for creating tasks.
+
   <img src="images/add_task.jpg" alt="Add Task Page" width="200"/>
 
 ### Prerequisites
