@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:task_app/views/widgets/appButton.dart';
 
 import '../../providers/taskProvider.dart';
 import '../../models/taskModel.dart';
@@ -71,7 +72,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
     );
   }
 
-  AppBar _appBar() => AppBar(backgroundColor:Colors.white,title: const Text("Add New Task"), centerTitle: true);
+  AppBar _appBar() => AppBar(
+      backgroundColor: Colors.white,
+      title: const Text("Add New Task"),
+      centerTitle: true);
 
   Row _completedCheckBox() {
     return Row(
@@ -91,9 +95,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
     );
   }
 
-  ElevatedButton _addTaskButton(
-      TaskProvider taskProvider, BuildContext context) {
-    return ElevatedButton(
+  Widget _addTaskButton(TaskProvider taskProvider, BuildContext context) {
+    return AppButton(
         onPressed: () {
           if (_formKey.currentState!.validate()) {
             TaskModel task = TaskModel(
@@ -115,6 +118,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 .whenComplete(() => Navigator.pop(context));
           }
         },
-        child: const Text("Add Task"));
+        title: "Add Task");
   }
 }
