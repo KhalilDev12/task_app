@@ -28,6 +28,10 @@ A Flutter application for managing tasks with REST API integration.
 
   <img src="images/add_task.jpg" alt="Add Task Page" width="200"/>
 
+
+These instructions will help you set up and run the Task App on your local machine.
+
+
 ### Prerequisites
 
 - Flutter installed on your machine. Follow the official Flutter installation
